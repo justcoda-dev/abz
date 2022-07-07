@@ -1,0 +1,35 @@
+.item {
+  padding: 20px;
+  border-radius: 10px;
+  height: 214px;
+  background: #ffffff;
+  flex-basis: 282px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  .image {
+    img {
+      max-height: 70px;
+      max-width: 70px;
+      border-radius: 50%;
+    }
+  }
+
+  .name {
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+}
+
+@media screen {
+
+}

@@ -1,72 +1,85 @@
-.label {
+$checkedBorderColor: #00BDD3;
+$uncheckedBorderColor: #D0CFCF;
+$radioSize: 20px;
+$radioInnerSize: 10px;
+$rippleAnimationSize: 15px;
 
+.item {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  flex-wrap: nowrap;
+  margin: 13px 0;
 
-  margin: 12px 0;
+  .radioButton {
+    height: 20px;
+    width: 20px;
 
-  cursor: pointer;
-  position: relative;
+    .input {
+      display: none;
 
-  .input {
-    opacity: 0;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
+      &:checked + .label:before {
+        border-color: $checkedBorderColor;
+        animation: ripple 0.2s linear forwards;
+      }
 
-    &:checked + .design::before {
-      opacity: 1;
-      transform: scale(.6);
+      &:checked + .label:after {
+        margin: 5px;
+        width: 10px;
+        height: 10px;
+      }
     }
 
-    &:hover + .design, :focus + .design {
-      border: 1px solid var(--primary);
-    }
-  }
+    .label {
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      position: relative;
+      margin: 0;
+      cursor: pointer;
 
-  .button {
-    width: 16px;
-    height: 16px;
+      &:before, &:after {
+        position: absolute;
+        content: '';
+        border-radius: 50%;
+        transition: all .3s ease;
+        transition-property: transform, border-color;
+      }
 
-    border: 1px solid var(--other);
-    border-radius: 100%;
-    margin-right: 16px;
+      &:before {
+        left: 0;
+        top: 0;
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        border: 1px solid #D0CFCFFF;
+      }
 
-    position: relative;
-
-    &:before, :after {
-      content: "";
-      display: block;
-
-      width: inherit;
-      height: inherit;
-
-      border-radius: inherit;
-
-      position: absolute;
-      transform: scale(0);
-      transform-origin: center center;
-    }
-
-    &:before {
-      background: var(--other);
-      opacity: 0;
-      transition: .3s;
-    }
-
-    &:after {
-      background: var(--primary);
-      opacity: .4;
-      transition: .6s;
+      &:after {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        background: $checkedBorderColor;
+      }
     }
   }
 
   .text {
-    color: var(--other);
-    font-weight: bold;
+    margin-left: 12px;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 1px #00000000;
+  }
+
+  50% {
+    box-shadow: 0 0 0 $rippleAnimationSize #00000019;
+  }
+
+  100% {
+    box-shadow: 0 0 0 $rippleAnimationSize #00000000;
   }
 }

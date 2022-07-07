@@ -1,26 +1,16 @@
-import {useState} from "react";
+import {useCallback, useState} from "react";
 
 const useUpload = () => {
-    const [images, setImages] = useState(null)
-    const [imagesValue, setImagesValue] = useState("")
-    const [imagesArr, setImagesArr] = useState([])
-    const handleChange = ({target: {files, value}}) => {
-        setImagesValue(value)
-        const arr = []
-        const formData = new FormData()
-        for (let i = 0; i < files.length; i++) {
-            formData.append("files", files[i])
-            arr.push(files[i].name)
-        }
-        setImages(formData)
-        setImagesArr([...arr])
-    }
-
-    const clearImages = () => {
-        setImages(null)
-        setImagesValue("")
-        setImagesArr([])
-    }
-
-    return {images, handleChange, clearImages, imagesValue, imagesArr}
+    const [image, setImage] = useState(null)
+    const [imageName, setImageName] = useState("")
+    const [errorText, setErrorText] = useState("")
+    const onChangeHandle = useCallback(({target: {files}}) => {
+        setImage(files[0])
+        setImageName(files[0]?.name)
+    }, [image, imageName])
+    const clearInput = useCallback(() => {
+        setImage(null)
+    }, [image])
+    return {image, onChangeHandle, clearInput, imageName, errorText}
 }
+export default useUpload

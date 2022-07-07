@@ -1,11 +1,23 @@
-import {Loading} from "react-loading-ui/src";
+import CircularProgress from '@mui/material/CircularProgress'
 
-const Preloader = ({}) => {
+const types = {
+    "normal": {
+        width: "48px",
+        height: "48px"
+    }
+}
+
+const Preloader = ({type}) => {
 
     return (
-        <div>
-            {Loading()}
-        </div>
+        <CircularProgress
+            style={
+                type
+                    ? types[type]
+                    : types.normal
+            }
+        />
+
     )
 }
 export default Preloader
