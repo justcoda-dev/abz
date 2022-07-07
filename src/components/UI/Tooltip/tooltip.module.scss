@@ -1,0 +1,13 @@
+@import "src/styles/colorVars";
+
+.normal {
+  & > div {
+    padding: 3px 16px;
+    background-color: $fontColor;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 119%;
+    text-align: left;
+    vertical-align: center;
+  }
+}

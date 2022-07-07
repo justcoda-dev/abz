@@ -1,26 +1,27 @@
 import scss from "./heading.module.scss"
-
-const lightStyle = {
-    fontWeight: "300"
-}
-const normalStyle = {
-    fontWeight: "400"
-}
-const boldStyle = {
-    fontWeight: "800"
-}
+import classNames from "classnames"
 
 const types = {
-    "light": lightStyle,
-    "normal": normalStyle,
-    "bold": boldStyle,
+    "light": scss.light,
+    "normal": scss.normal,
+    "bold": scss.bold,
 }
 
-const Heading = ({type, children}) => {
+const Heading = ({type, children, parentClass}) => {
     return (
-        <h1 style={type ? types[type] : types.normal} className={scss.title}>
+        <h1
+            className={
+                classNames({
+                    [scss.title]: true,
+                    [types[type]]: !!type,
+                    [types.normal]: !type,
+                    [parentClass]: !!parentClass
+                })
+
+            }>
             {children}
         </h1>
     )
 }
+
 export default Heading

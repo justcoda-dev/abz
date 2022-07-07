@@ -2,7 +2,6 @@
 @import "src/styles/fontVars";
 // main
 .wrapper {
-
   line-height: 119%;
 
   .fileUploader {
@@ -17,8 +16,11 @@
       text-align: center;
       vertical-align: middle;
       cursor: pointer;
-      border: 1px solid $fontColor;
-      border-radius: 4px;
+      outline: 1px solid $fontColor;
+      border-radius: 4px 0 0 4px;
+
+
+      border-right: none;
       height: 100%;
       width: 83px;
 
@@ -44,9 +46,12 @@
     }
 
     .uploadStatus {
+
       color: #7E7E7E;
-      display: inline-block;
-      margin: auto 95px auto auto;
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+
 
       &::first-letter {
         text-transform: uppercase;

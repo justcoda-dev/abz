@@ -1,51 +1,49 @@
 import scss from "./upload.module.scss"
-import {useCallback, useMemo, useRef, useState} from "react";
+import {useMemo, useRef} from "react"
+import classNames from "classnames"
 
 const types = {
     "normal": scss.normal
 }
 
-const Upload = ({type}) => {
-    const [filesArr, setFilesArr] = useState([])
-    const [errorText, setErrorText] = useState("")
-
+const Upload = ({type, onChange, imageName, imageTypes, errorText}) => {
     const fileInput = useRef()
-
-    const uploadHandle = useCallback(({target: {files}}) => {
-        const arr = []
-        const formData = new FormData()
-        for (let i = 0; i < files.length; i++) {
-            formData.append("files", files[i])
-            arr.push(files[i].name)
-        }
-        setFilesArr([...arr])
-    }, [])
-
-    const fileName = useMemo(() =>
-            filesArr?.[0]
-                ? filesArr[0]
-                : "Upload your photo",
-        [filesArr])
-
+    const fileName = useMemo(() => imageName ? imageName : "Upload your photo", [imageName])
 
     return (
         <div className={scss.wrapper}>
-            <div className={`${scss.fileUploader} ${errorText && scss.error}`}>
+
+            <div className={classNames({
+                    [scss.fileUploader]: true,
+                    [scss.error]: !!errorText
+                }
+            )}>
                 <label
-                    className={`${scss.upload} ${errorText && scss.uploadError} ${type ? types[type] : types.normal}`}
+                    className={classNames({
+                        [scss.upload]: true,
+                        [scss.uploadText]: !!errorText,
+                        [types[type]]: !!type,
+                        [types.normal]: !type
+                    })}
                 >
-                    <span className={scss.uploadText}>upload</span>
+                    <span className={scss.uploadText}>
+                        upload
+                    </span>
                     <input
-                        onChange={uploadHandle}
+                        onChange={onChange}
                         ref={fileInput}
                         id="file"
                         className={scss.fileInput}
                         type="file"
-                        multiple
+                        accept={`image/*,${imageTypes || ""}`}
                     />
                 </label>
                 <span
-                    className={`${scss.uploadStatus} ${filesArr.length && scss.filled}`}
+
+                    className={classNames({
+                        [scss.uploadStatus]: true,
+                        [scss.filled]: !!fileName
+                    })}
                 >
                 {fileName}
             </span>

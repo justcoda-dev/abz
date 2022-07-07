@@ -1,0 +1,13 @@
+@import "styles/fontVars";
+@import "styles/colorVars";
+
+.app {
+  font-family: $fontFamily;
+  font-weight: $fontRegular;
+  color: $fontColor;
+  line-height: 140%;
+  background: #F8F8F8;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}

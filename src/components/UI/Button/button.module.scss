@@ -1,0 +1,37 @@
+@import "src/styles/colorVars";
+
+.button {
+  min-width: 100px;
+  height: 34px;
+  border-radius: 80px;
+  border: none;
+  font-size: 16px;
+  line-height: 119%;
+  text-align: center;
+  color: $fontColor;
+  vertical-align: center;
+  padding: 4px 18px;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.yellow {
+  background: $primary;
+  transition: .3s;
+  cursor: pointer;
+
+  &:hover {
+    background: #FFE302;
+  }
+}
+
+.disabled {
+  background: #B4B4B4;
+  color: #FFFFFFDD;
+
+  &:hover {
+    background: #B4B4B4;
+  }
+}
