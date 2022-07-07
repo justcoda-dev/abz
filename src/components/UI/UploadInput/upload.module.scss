@@ -1,0 +1,91 @@
+@import "src/styles/colorVars";
+@import "src/styles/fontVars";
+// main
+.wrapper {
+
+  line-height: 119%;
+
+  .fileUploader {
+    display: flex;
+    border: 1px solid #D0CFCF;
+    width: 328px;
+    height: 54px;
+    border-radius: 4px;
+
+    .upload {
+      display: flex;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      border: 1px solid $fontColor;
+      border-radius: 4px;
+      height: 100%;
+      width: 83px;
+
+      .fileInput {
+        display: none;
+      }
+
+      .uploadText {
+        width: 100%;
+        margin: auto;
+
+        &::first-letter {
+          text-transform: uppercase;
+        }
+      }
+
+
+    }
+
+    .uploadError {
+      border: none;
+      outline: 2px solid #CB3D40;
+    }
+
+    .uploadStatus {
+      color: #7E7E7E;
+      display: inline-block;
+      margin: auto 95px auto auto;
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+    // type
+    .normal {
+      font-weight: 400;
+    }
+
+
+  }
+
+  // validation
+
+  .filled {
+    color: $fontColor;
+  }
+
+  .disabled {
+  }
+
+  .error {
+    border: 2px solid #CB3D40;
+
+  }
+
+  .errorText {
+    font-family: $errorFont;
+    line-height: 102%;
+    font-size: 12px;
+    text-align: left;
+    vertical-align: top;
+    color: #CB3D40;
+    margin: 4px 0 0 18px;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}

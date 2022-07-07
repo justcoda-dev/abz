@@ -1,0 +1,72 @@
+.label {
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  margin: 12px 0;
+
+  cursor: pointer;
+  position: relative;
+
+  .input {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+    &:checked + .design::before {
+      opacity: 1;
+      transform: scale(.6);
+    }
+
+    &:hover + .design, :focus + .design {
+      border: 1px solid var(--primary);
+    }
+  }
+
+  .button {
+    width: 16px;
+    height: 16px;
+
+    border: 1px solid var(--other);
+    border-radius: 100%;
+    margin-right: 16px;
+
+    position: relative;
+
+    &:before, :after {
+      content: "";
+      display: block;
+
+      width: inherit;
+      height: inherit;
+
+      border-radius: inherit;
+
+      position: absolute;
+      transform: scale(0);
+      transform-origin: center center;
+    }
+
+    &:before {
+      background: var(--other);
+      opacity: 0;
+      transition: .3s;
+    }
+
+    &:after {
+      background: var(--primary);
+      opacity: .4;
+      transition: .6s;
+    }
+  }
+
+  .text {
+    color: var(--other);
+    font-weight: bold;
+  }
+}
