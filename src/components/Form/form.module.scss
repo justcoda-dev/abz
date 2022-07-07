@@ -1,8 +1,7 @@
-
 .form {
-.title {
-  text-align: center;
-}
+  .title {
+    text-align: center;
+  }
   .container {
     width: 380px;
     display: flex;
@@ -26,12 +25,9 @@
   }
 
   .radioButtons {
-
-
   }
 
   .upload {
-
   }
 }
 
@@ -46,15 +42,12 @@
     width: 328px;
     height: 290px;
   }
-
-
 }
 
 @media screen and (min-width: 360px) {
   .form {
     .container {
       width: 328px;
-
     }
   }
 }

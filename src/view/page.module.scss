@@ -1,4 +1,4 @@
-@import "./src/styles/breakpoints";
+@import './src/styles/breakpoints';
 
 .page {
   min-width: 360px;
@@ -10,17 +10,15 @@
 
   display: block;
   margin: 0 auto;
-  background: #F8F8F8;
+  background: #f8f8f8;
 
   .header {
     background: #ffffff;
-
   }
 
   //section banner
   .banner {
     position: relative;
-    height: 650px;
 
     .inner {
       position: relative;
@@ -48,7 +46,7 @@
     }
 
     &:before {
-      content: "";
+      content: '';
       position: absolute;
       background: #000000;
       opacity: 50%;
@@ -101,7 +99,6 @@
     margin: 0;
     padding: 0;
   }
-
 }
 
 @media screen and (min-width: $xs) {
@@ -124,5 +121,3 @@
     margin-right: 82px;
   }
 }
-
-

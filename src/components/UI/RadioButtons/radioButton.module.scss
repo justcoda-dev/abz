@@ -1,5 +1,5 @@
-$checkedBorderColor: #00BDD3;
-$uncheckedBorderColor: #D0CFCF;
+$checkedBorderColor: #00bdd3;
+$uncheckedBorderColor: #d0cfcf;
 $radioSize: 20px;
 $radioInnerSize: 10px;
 $rippleAnimationSize: 15px;
@@ -37,11 +37,12 @@ $rippleAnimationSize: 15px;
       margin: 0;
       cursor: pointer;
 
-      &:before, &:after {
+      &:before,
+      &:after {
         position: absolute;
         content: '';
         border-radius: 50%;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
         transition-property: transform, border-color;
       }
 
@@ -50,7 +51,7 @@ $rippleAnimationSize: 15px;
         top: 0;
         width: calc(100% - 2px);
         height: calc(100% - 2px);
-        border: 1px solid #D0CFCFFF;
+        border: 1px solid #d0cfcfff;
       }
 
       &:after {

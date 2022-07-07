@@ -1,4 +1,4 @@
-@import "src/styles/colorVars";
+@import 'src/styles/colorVars';
 
 .button {
   min-width: 100px;
@@ -19,19 +19,19 @@
 
 .yellow {
   background: $primary;
-  transition: .3s;
+  transition: 0.3s;
   cursor: pointer;
 
   &:hover {
-    background: #FFE302;
+    background: #ffe302;
   }
 }
 
 .disabled {
-  background: #B4B4B4;
-  color: #FFFFFFDD;
+  background: #b4b4b4;
+  color: #ffffffdd;
 
   &:hover {
-    background: #B4B4B4;
+    background: #b4b4b4;
   }
 }

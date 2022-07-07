@@ -1,27 +1,24 @@
-import scss from "./heading.module.scss"
-import classNames from "classnames"
+import scss from './heading.module.scss';
 
 const types = {
-    "light": scss.light,
-    "normal": scss.normal,
-    "bold": scss.bold,
-}
+  light: scss.light,
+  normal: scss.normal,
+  bold: scss.bold,
+};
 
-const Heading = ({type, children, parentClass}) => {
-    return (
-        <h1
-            className={
-                classNames({
-                    [scss.title]: true,
-                    [types[type]]: !!type,
-                    [types.normal]: !type,
-                    [parentClass]: !!parentClass
-                })
+const Heading = ({ type, children, parentClass }) => {
+  return (
+    <h1
+      className={classNames({
+        [scss.title]: true,
+        [types[type]]: !!type,
+        [types.normal]: !type,
+        [parentClass]: !!parentClass,
+      })}
+    >
+      {children}
+    </h1>
+  );
+};
 
-            }>
-            {children}
-        </h1>
-    )
-}
-
-export default Heading
+export default Heading;
