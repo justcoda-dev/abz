@@ -1,4 +1,13 @@
-
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import request from '../api/api';
+import CardsList from '../components/Cards/CardsList';
+import Form from '../components/Form/Form';
+import Header from '../components/Header/Header';
+import Button from '../components/UI/Button/Button';
+import Heading from '../components/UI/Heading/Heading';
+import Text from '../components/UI/Text/Text';
+import { SERVER } from '../config';
+import scss from './page.module.scss';
 
 const USERS_PER_PAGE = 6;
 const DEFAULT_PAGE = 1;

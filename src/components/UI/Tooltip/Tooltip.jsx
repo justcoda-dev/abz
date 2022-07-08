@@ -1,5 +1,5 @@
+import Tip from '@mui/material/Tooltip/Tooltip';
 import scss from './tooltip.module.scss';
-
 const types = {
   normal: scss.normal,
 };

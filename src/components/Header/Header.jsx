@@ -1,4 +1,8 @@
-
+import classNames from 'classnames';
+import { SERVER } from '../../config';
+import Button from '../UI/Button/Button';
+import Logo from '../UI/Logo/Logo';
+import scss from './header.module.scss';
 
 const Header = ({ type, parentClass }) => {
   const types = {

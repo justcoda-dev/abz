@@ -1,5 +1,5 @@
+import classNames from 'classnames';
 import scss from './button.module.scss';
-
 const types = {
   yellow: scss.yellow,
 };

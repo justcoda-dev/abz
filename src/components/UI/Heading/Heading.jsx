@@ -1,5 +1,5 @@
+import classNames from 'classnames';
 import scss from './heading.module.scss';
-
 const types = {
   light: scss.light,
   normal: scss.normal,

@@ -1,10 +1,12 @@
+@import "/src/styles/breakpoints";
+
 .item {
   padding: 20px;
   border-radius: 10px;
-  height: 214px;
   background: #ffffff;
-  flex-basis: 282px;
-  flex-grow: 0;
+  height: 100%;
+  min-height: 254px;
+  width: 282px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,15 +21,25 @@
     }
   }
 
-  .name {
-  }
-
   .info {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
+
+    .text {
+      max-width: 282px;
+      text-align: center;
+    }
   }
 }
 
-@media screen {
+@media screen and (min-width: $xl) {
+  .item {
+    width: 370px;
+
+    .info {
+      width: 370px;
+    }
+  }
 }

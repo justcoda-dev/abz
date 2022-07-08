@@ -1,4 +1,21 @@
-
+import classNames from 'classnames';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import request from '../../api/api';
+import { SERVER } from '../../config';
+import Button from '../UI/Button/Button';
+import Heading from '../UI/Heading/Heading';
+import InputText from '../UI/InputText/InputText';
+import useInputText from '../UI/InputText/useInputText';
+import Preloader from '../UI/Preloader/Preloader';
+import RadioButtons from '../UI/RadioButtons/RadioButtons';
+import Upload from '../UI/UploadInput/Upload';
+import useUpload from '../UI/UploadInput/useUpload';
+import scss from './form.module.scss';
+import {
+  emailInputSchema,
+  phoneInputSchema,
+  textInputSchema,
+} from './validation';
 
 const types = {
   mobile: scss.mobile,
@@ -166,7 +183,7 @@ const Form = ({ type, onSignUpClick }) => {
               )}
             </div>
             <div className={scss.upload}>
-              <UploadInput
+              <Upload
                 type="normal"
                 imageName={imageName}
                 onChange={uploadChangeHandle}

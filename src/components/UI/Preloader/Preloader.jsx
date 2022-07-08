@@ -1,3 +1,4 @@
+import { CircularProgress } from '@mui/material';
 const types = {
   normal: {
     width: '48px',

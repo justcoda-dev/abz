@@ -18,16 +18,16 @@ const CardsItem = ({ item = {}, parentClass }) => {
               ? item.photo
               : `${SERVER}/images/photo-cover.svg`
           }
-          alt=""
+          alt="#"
         />
       </div>
-      <div className={scss.name}>
-        <Text>{item.name}</Text>
+      <div>
+        <Text parentClass={scss.text}>{item.name}</Text>
       </div>
       <div className={scss.info}>
-        <Text>{item.position}</Text>
-        <Text>{item.email}</Text>
-        <Text>{item.phone}</Text>
+        <Text parentClass={scss.text}>{item.position}</Text>
+        <Text parentClass={scss.text}>{item.email}</Text>
+        <Text parentClass={scss.text}>{item.phone}</Text>
       </div>
     </li>
   );
